@@ -1,0 +1,90 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>User Login Form</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+</head>
+<style>
+	.img-fluid{
+		margin-top: 40px;
+    	margin-left: 30px;
+		border-radius: 2px;
+	}
+</style>
+
+<body>
+	<section class="vh-100" style="background-color: #9A616D;">
+		<div class="container py-5 h-100">
+		  <div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col col-xl-10">
+			  <div class="card" style="border-radius: 1rem;">
+				<div class="row g-0">
+				  <div class="col-md-6 col-lg-5 d-none d-md-block">
+					<img src="https://img.freepik.com/free-photo/jar-gold-coins-is-table-with-dark-background_1340-28926.jpg?w=740&t=st=1684683447~exp=1684684047~hmac=cd8b37c4aabc3d3188f222a9d5c4cce78b195e3655f20d7486aa11398000ea09"
+					  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+				  </div>
+				  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+					<div class="card-body p-4 p-lg-5 text-black">
+						<div class="container">
+							<h2>User Login</h2>
+							<form action="{{ url_for('login') }}" method="post">
+								{% if mesage is defined and mesage %}
+								<div class="alert alert-warning">{{ mesage }}</div>
+								{% endif %}
+								<div class="form-group">
+									<label for="email">Email:</label>
+									<input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+										name="email" />
+								</div>
+								<div class="form-group">
+									<label for="pwd">Password:</label>
+									<input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+										name="pswd" />
+								</div><br>
+								<button type="submit" class="btn btn-primary">Login</button><br><br>
+								<p class="bottom">
+									Dont't have an account?
+									<a class="bottom" href="{{url_for('register')}}"> Register here</a>
+								</p>
+							</form>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	<!-- <div class="container">
+		<h2>User Login</h2>
+		<form action="{{ url_for('login') }}" method="post">
+			{% if mesage is defined and mesage %}
+			<div class="alert alert-warning">{{ mesage }}</div>
+			{% endif %}
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+					name="email" />
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+					name="pswd" />
+			</div>
+			<button type="submit" class="btn btn-primary">Login</button>
+			<p class="bottom">
+				Dont't have an account?
+				<a class="bottom" href="{{url_for('register')}}"> Register here</a>
+			</p>
+		</form>
+	</div> -->
+</body>
+
+</html>
+
+
+
+
